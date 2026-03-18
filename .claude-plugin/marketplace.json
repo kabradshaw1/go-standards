@@ -1,14 +1,17 @@
 {
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "go-standards",
+  "description": "Go service architecture standards and layer-specific implementation skills",
   "owner": {
     "name": "Kyle Bradshaw"
   },
   "plugins": [{
     "name": "go-standards",
     "description": "Go service architecture standards and layer-specific implementation skills",
-    "source": {
-      "source": "github",
-      "repo": "kabradshaw1/go-standards"
-    }
+    "version": "1.0.0",
+    "author": {
+      "name": "Kyle Bradshaw"
+    },
+    "source": "./"
   }]
 }
