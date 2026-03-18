@@ -1,7 +1,11 @@
 {
   "name": "go-standards",
+  "owner": {
+    "name": "Kyle Bradshaw"
+  },
   "plugins": [{
     "name": "go-standards",
+    "description": "Go service architecture standards and layer-specific implementation skills",
     "source": {
       "source": "github",
       "repo": "kabradshaw1/go-standards"
