@@ -6,27 +6,10 @@ A Claude Code plugin that provides skills for building Go services with a consis
 
 ## Installation
 
-Add go-standards to your Go service repository so the whole team gets the plugin automatically — no per-developer setup required. This is the recommended approach when setting up a new Go service repo, and the right first step before using the Superpowers parallel agent workflow.
+Add go-standards to your Go service repository so the whole team gets the plugin discoverable by default. This is the recommended approach when setting up a new Go service repo, and the right first step before using the Superpowers parallel agent workflow.
 
-In the consuming repo, add a `.claude-plugin/marketplace.json`:
+**Step 1 — Add `.claude/settings.json` to the consuming repo** (commit this):
 
-**`.claude-plugin/marketplace.json`**:
-```json
-{
-  "name": "go-standards",
-  "plugins": [{
-    "name": "go-standards",
-    "source": {
-      "source": "github",
-      "repo": "kabradshaw1/go-standards"
-    }
-  }]
-}
-```
-
-Then reference it in `.claude/settings.json`:
-
-**`.claude/settings.json`**:
 ```json
 {
   "extraKnownMarketplaces": {
@@ -43,7 +26,13 @@ Then reference it in `.claude/settings.json`:
 }
 ```
 
-Both files are committed to the repo. Any developer who trusts the repo folder gets the plugin enabled automatically — skills are available immediately without running any install commands.
+**Step 2 — Each developer installs the plugin once** in the consuming repo:
+
+```
+/plugin install go-standards@go-standards
+```
+
+This fetches the plugin from GitHub and makes the skills available. The `enabledPlugins` flag in settings.json marks it enabled — but the install command must be run at least once per developer to fetch it. After that, the skills appear immediately on session start.
 
 ---
 
