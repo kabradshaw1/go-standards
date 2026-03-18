@@ -6,22 +6,11 @@ A Claude Code plugin that provides skills for building Go services with a consis
 
 ## Installation
 
-### Option A — Per-developer global install (simplest)
+Add go-standards to your Go service repository so the whole team gets the plugin automatically — no per-developer setup required. This is the recommended approach when setting up a new Go service repo, and the right first step before using the Superpowers parallel agent workflow.
 
-Each developer installs the plugin once to their user scope. No project-level config needed.
+In the consuming repo, add a `.claude-plugin/marketplace.json`:
 
-```bash
-/plugin marketplace add kabradshaw1/go-standards
-/plugin install go-standards@go-standards --scope user
-```
-
-This installs to `~/.claude/settings.json` on each developer's machine. Never committed to the repo.
-
-### Option B — Repo-level marketplace (team default, recommended)
-
-In the consuming repo, add a `.claude-plugin/marketplace.json` that points to the go-standards GitHub repo. Then reference it in `.claude/settings.json` with `extraKnownMarketplaces` and `enabledPlugins`.
-
-**`.claude-plugin/marketplace.json`** (in consuming repo):
+**`.claude-plugin/marketplace.json`**:
 ```json
 {
   "name": "go-standards",
@@ -35,7 +24,9 @@ In the consuming repo, add a `.claude-plugin/marketplace.json` that points to th
 }
 ```
 
-**`.claude/settings.json`** (in consuming repo):
+Then reference it in `.claude/settings.json`:
+
+**`.claude/settings.json`**:
 ```json
 {
   "extraKnownMarketplaces": {
@@ -52,12 +43,7 @@ In the consuming repo, add a `.claude-plugin/marketplace.json` that points to th
 }
 ```
 
-This approach:
-- Uses a GitHub URL, not a local path — works for every developer
-- Is committed to the repo — the plugin is enabled by default for the whole team
-- Developers must trust the repo folder for managed settings to apply
-
-Skills are namespaced under `go-standards` and available immediately after installation.
+Both files are committed to the repo. Any developer who trusts the repo folder gets the plugin enabled automatically — skills are available immediately without running any install commands.
 
 ---
 
