@@ -1,0 +1,8 @@
+{
+  "name": "go-standards",
+  "version": "1.0.0",
+  "description": "Go service architecture standards and layer-specific implementation skills",
+  "author": {
+    "name": "Kyle Bradshaw"
+  }
+}
