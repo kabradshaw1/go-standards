@@ -11,7 +11,7 @@ A Claude Code plugin that provides skills for building Go services with a consis
 Each developer installs the plugin once to their user scope. No project-level config needed.
 
 ```bash
-/plugin marketplace add kylebradshaw/go-standards
+/plugin marketplace add kabradshaw1/go-standards
 /plugin install go-standards@go-standards --scope user
 ```
 
@@ -29,7 +29,7 @@ In the consuming repo, add a `.claude-plugin/marketplace.json` that points to th
     "name": "go-standards",
     "source": {
       "source": "github",
-      "repo": "kylebradshaw/go-standards"
+      "repo": "kabradshaw1/go-standards"
     }
   }]
 }
@@ -42,7 +42,7 @@ In the consuming repo, add a `.claude-plugin/marketplace.json` that points to th
     "go-standards": {
       "source": {
         "source": "github",
-        "repo": "kylebradshaw/go-standards"
+        "repo": "kabradshaw1/go-standards"
       }
     }
   },

@@ -1,0 +1,10 @@
+{
+  "name": "go-standards",
+  "plugins": [{
+    "name": "go-standards",
+    "source": {
+      "source": "github",
+      "repo": "kabradshaw1/go-standards"
+    }
+  }]
+}
